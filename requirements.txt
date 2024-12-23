@@ -1,0 +1,6 @@
+# download all the packages directly by writing them here and then downloading them altogether in the terminal using pip install -r requirements.txt
+Flask
+scikit-learn
+pandas
+numpy
+matplotlib
