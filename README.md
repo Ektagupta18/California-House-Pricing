@@ -49,3 +49,7 @@ egupta963@gmail.com
 git commit -m "This commit includes requirement.txt and readme file"  
 '''
 
+5. after commiting, you push the changes into the main repository
+'''
+git push origin main
+'''
