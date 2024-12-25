@@ -32,7 +32,7 @@ jobs:
             -H "Authorization: Bearer ${{ secrets.RENDER_API_KEY }}"  # Render API key secret
             -H "Content-Type: application/json" \
             -d '{
-              "serviceId": "${{ secrets.RENDER_SERVICE_ID }}",  # Render service ID secret
+              "serviceId": "srv-ctlahm0gph6c739jiv5g",  # Your service ID
               "clearCache": true
             }' \
-            https://api.render.com/v1/services/${{ secrets.RENDER_SERVICE_ID }}/deploys  # Proper URL formatting with the serviceId
+            https://api.render.com/v1/services/srv-ctlahm0gph6c739jiv5g/deploys  # Correct URL with serviceId
