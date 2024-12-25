@@ -35,4 +35,4 @@ jobs:
               "serviceId": "${{ secrets.RENDER_SERVICE_ID }}",  # Render service ID secret
               "clearCache": true
             }' \
-            https://api.render.com/v1/services/${{ secrets.RENDER_SERVICE_ID }}/deploys
+            https://api.render.com/v1/services/${{ secrets.RENDER_SERVICE_ID }}/deploys  # Proper URL formatting with the serviceId
