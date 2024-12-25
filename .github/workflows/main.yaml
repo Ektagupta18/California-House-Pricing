@@ -27,13 +27,12 @@ jobs:
 
       # Deploy to Render via Render's API
       - name: Deploy to Render
-  run: |
-    curl -X POST \
-      -H "Authorization: Bearer ${{ secrets.RENDER_API_KEY }}"  # Render API key secret
-      -H "Content-Type: application/json" \
-      -d '{
-        "serviceId": "${{ secrets.RENDER_SERVICE_ID }}",  # Render service ID secret
-        "clearCache": true
-      }' \
-      "https://api.render.com/v1/services/${{ secrets.RENDER_SERVICE_ID }}/deploys"  # Ensure URL is properly quoted
-
+        run: |
+          curl -X POST \
+            -H "Authorization: Bearer ${{ secrets.RENDER_API_KEY }}"  # Render API key secret
+            -H "Content-Type: application/json" \
+            -d '{
+              "serviceId": "${{ secrets.RENDER_SERVICE_ID }}",  # Render service ID secret
+              "clearCache": true
+            }' \
+            https://api.render.com/v1/services/${{ secrets.RENDER_SERVICE_ID }}/deploys  # Proper URL formatting with the serviceId
