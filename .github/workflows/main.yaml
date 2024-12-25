@@ -1,28 +1,25 @@
-# Workflow name.
 name: Deploy to Render
 
-# Run workflow on every push to the main branch.
 on:
   push:
     branches: [main]
 
-# Workflow jobs.
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      # Check out your repository.
+      # Check out your repository
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      # Log in to Docker Hub (or your preferred container registry).
+      # Log in to Docker Hub
       - name: Log in to Docker Hub
         uses: docker/login-action@v2
         with:
-          username: ${{ secrets.ekta100 }}
-          password: ${{ secrets.Ekta12345678 }}
+          username: ${{ secrets.ekta100 }}  # Your Docker Hub username secret
+          password: ${{ secrets.Ekta12345678 }}  # Your Docker Hub password or token secret
 
-      # Build and push Docker image.
+      # Build and push Docker image
       - name: Build and Push Docker Image
         run: |
           docker build -t ${{ secrets.ekta100 }}/my-app:latest .
@@ -32,10 +29,10 @@ jobs:
       - name: Deploy to Render
         run: |
           curl -X POST \
-            -H "Authorization: Bearer ${{ secrets.rnd_GUjnnvTX14JyDLd5x3iE4DHwxBam }}" \
+            -H "Authorization: Bearer ${{ secrets.rnd_GUjnnvTX14JyDLd5x3iE4DHwxBam }}"  # Your Render API token secret
             -H "Content-Type: application/json" \
             -d '{
-              "serviceId": "<srv-ctlahm0gph6c739jiv5g>",
+              "serviceId": "srv-ctlahm0gph6c739jiv5g",  # Replace with your actual Render service ID
               "clearCache": true
             }' \
-            https://api.render.com/v1/services/<srv-ctlahm0gph6c739jiv5g>/deploys
+            https://api.render.com/v1/services/srv-ctlahm0gph6c739jiv5g/deploys  # Replace with your actual service ID
