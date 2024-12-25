@@ -19,23 +19,23 @@ jobs:
       - name: Log in to Docker Hub
         uses: docker/login-action@v2
         with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
+          username: ${{ secrets.ekta100 }}
+          password: ${{ secrets.Ekta@12345678 }}
 
       # Build and push Docker image.
       - name: Build and Push Docker Image
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/my-app:latest .
-          docker push ${{ secrets.DOCKER_USERNAME }}/my-app:latest
+          docker build -t ${{ secrets.ekta100 }}/my-app:latest .
+          docker push ${{ secrets.ekta100 }}/my-app:latest
 
       # Deploy to Render via Render's API
       - name: Deploy to Render
         run: |
           curl -X POST \
-            -H "Authorization: Bearer ${{ secrets.RENDER_API_KEY }}" \
+            -H "Authorization: Bearer ${{ secrets.rnd_GUjnnvTX14JyDLd5x3iE4DHwxBam }}" \
             -H "Content-Type: application/json" \
             -d '{
-              "serviceId": "<YOUR_RENDER_SERVICE_ID>",
+              "serviceId": "<srv-ctlahm0gph6c739jiv5g>",
               "clearCache": true
             }' \
-            https://api.render.com/v1/services/<YOUR_RENDER_SERVICE_ID>/deploys
+            https://api.render.com/v1/services/<srv-ctlahm0gph6c739jiv5g>/deploys
