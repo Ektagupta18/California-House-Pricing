@@ -12,6 +12,12 @@
 conda create -p venv python==3.7 -y
 '''
 
+# to activate the virtual environment
+
+'''
+conda activate .\venv
+'''
+
 # setting up git
 '''
 (C:\Users\Ekta Gupta\OneDrive\Desktop\PROJECTS\docker project on linear regression\venv) C:\Users\Ekta Gupta\OneDrive\Desktop\PROJECTS\docker project on linear regression\California-House-Pricing>git config --global user.name "Ekta Gupta"

@@ -20,7 +20,7 @@ jobs:
         uses: docker/login-action@v2
         with:
           username: ${{ secrets.ekta100 }}
-          password: ${{ secrets.Ekta@12345678 }}
+          password: ${{ secrets.Ekta12345678 }}
 
       # Build and push Docker image.
       - name: Build and Push Docker Image
